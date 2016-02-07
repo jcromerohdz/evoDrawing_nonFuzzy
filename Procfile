@@ -1,1 +1,1 @@
-web: gunicorn evoSpace_i.wsgi --log-file -
+web: gunicorn evospace_i.wsgi --log-file -
