@@ -11,8 +11,8 @@ import itertools
 from py2neo import node
 import datetime
 
-#from lib.store import redis
-import redis
+from lib.store import redis
+#import redis
 
 # Django
 from django.views.decorators.csrf import ensure_csrf_cookie, csrf_exempt
@@ -395,7 +395,8 @@ def facebook_login(request):
     if user:
         print user
         u = str(user)
-        r = redis.StrictRedis(host='localhost', port=6379, db=0)
+        #r = redis.StrictRedis(host='localhost', port=6379, db=0)
+        r = redis
         login_time = datetime.datetime.now()
         r.set("time_login:"+u, login_time)
 
@@ -415,7 +416,8 @@ def facebook_login(request):
 
 @login_required
 def logout_view(request):
-    r = redis.StrictRedis(host='localhost', port=6379, db=0)
+    #r = redis.StrictRedis(host='localhost', port=6379, db=0)
+    r = redis
     # Log a user out using Django's logout function and redirect them
     # back to the homepage.
     u = request.user.username
@@ -544,7 +546,7 @@ def get_collection(request, username, collection=None):
         print username, owner
 
         #r = redis.Redis(host=settings.REDIS_HOST, port=settings.REDIS_PORT, db=settings.REDIS_DB)
-        r = redis.StrictRedis(host='localhost', port=6379, db=0)
+        r = redis
         if collection:
             inds_psql = Collection.objects.get(user_collection__user__username=username,
                                                id=collection).individuals.all()

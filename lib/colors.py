@@ -8,8 +8,8 @@ from scaleRanking import get_level
 import random
 import numpy
 import sys
-#from store import redis
-import redis
+from store import redis
+#import redis
 from userFitnessFuzzyRules import fisuser
 from user_activity import Activity_stream
 
@@ -18,7 +18,7 @@ from user_activity import Activity_stream
 
 def fuzzy_fitness(fitness):
 
-    r = redis.StrictRedis(host='localhost', port=6379, db=0)
+    r = redis
 
     rate_by_fuzzy=[]
     fuzzy=[] 
@@ -112,7 +112,7 @@ def init_pop_crh(populationSize, popName="pop"):
         print individual
         server.put_individual(**individual)
 
-    r = redis.StrictRedis(host='localhost', port=6379, db=0)
+    r = redis
 
     redis_data = [eval(r.get(ind)) for ind in r.keys("pop:individual:*")]
     for ind in redis_data:
