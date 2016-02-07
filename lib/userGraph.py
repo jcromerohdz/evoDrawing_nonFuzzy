@@ -4,7 +4,7 @@ import time, datetime
 from py2neo import rel, node, neo4j, cypher
 from py2neo import packages
 
-from py2neo import ServiceRoot
+#from py2neo import ServiceRoot
 import os
 
 #graphenedb_url = os.environ.get("http://app47206011-hOD5pp:7MSXfHJkDqy4Gt28exdc@app47206011hod5pp.sb02.stations.graphenedb.com:24789", "http://localhost:7474/")
@@ -17,6 +17,7 @@ import os
 from py2neo.packages.urimagic import URI
 GRAPHENEDB_URL = "http://app47206011-hOD5pp:7MSXfHJkDqy4Gt28exdc@app47206011hod5pp.sb02.stations.graphenedb.com:24789"
 graphenedb_url = os.environ.get("GRAPHENEDB_URL", "http://localhost:7474/")
+service_root = neo4j.ServiceRoot(URI(graphenedb_url).resolve("/"))
 graph_db=service_root.graph_db
 
 #local  ne4j
