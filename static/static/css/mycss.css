@@ -1,0 +1,28 @@
+.grid-item {;
+width: 350px;
+}
+
+#selectable li {
+    height: 30px;
+}
+
+
+.thumbnail{
+	height: 550px;
+	width: 560px;
+	background-color: #414244;
+}
+
+.panel-default {
+  border-color: #525266;
+}
+
+body{
+	/*background-image: url("/static/img/Texture_1.jpg");*/
+	padding-top: 50px;
+}
+
+.nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus {
+  color: #6B6868;
+  background-color: #DADBDB;
+}

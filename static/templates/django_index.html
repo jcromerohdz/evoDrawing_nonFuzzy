@@ -1,0 +1,373 @@
+{%include "header.html" %}
+{%include "navbar.html" %}
+
+
+
+{%block header%}
+{%endblock%}
+
+
+<body>
+<div id="fb-root"></div>
+
+
+
+<!-- <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=156105524554651";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script> -->
+
+
+
+
+
+
+
+
+<!-- Primary Page Layout
+    =========================  ========================= -->
+ 
+{%block navbar%}
+{%endblock%}
+
+
+<div class="container">
+    <header>
+      <!--   <div class="row">
+
+        <div class="col-md-4">
+            
+                <p><h4>Click on the shapes you like, and give the rate you prefer to get more animations!.</h4> </p>
+            
+        </div>
+        
+
+        <div class="col-sm-8">
+            <br/>
+            
+            <button class="btn btn-success" id="get_more" > Get More</button> 
+            
+
+
+        </div>
+
+        </div> -->
+
+    <hr class="large" />
+    </header>   <!-- header  ================ -->
+
+
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+        <button class="btn btn-success" id="get_more" > Get More</button>
+          
+            {% if user.is_authenticated %}
+                <h2>{{ user.first_name }}</h2>
+                <!-- <p> <a href="/logout">Log out</a> </p> -->
+                <input id="username" type="hidden" value="{{user.username}}"/>
+                <p>Give a rate of your preferance to the painting on the canvas and get more paintings!.</p>
+            {% else %}
+                <h2>Join us!</h2>
+                <p>new user. Please <a href="facebook/get_login">log in </a> with your facebook account.</p>
+               
+                <input id="username" type="hidden" value="anonymous"/>
+            {% endif %}
+            <hr/>
+
+          
+
+
+         <!--    <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h3 class="panel-title">Participation</h3>
+                </div>
+          <div class="panel-body">
+          -->       <!-- {% if user.is_authenticated %} -->
+                      
+                  
+<!-- 
+                            <div class='col-sm-2'>
+                              <div class="btn-group-vertical " role="group" >
+                                    <button class="btn btn-default" id="" data-toggle="modal" data-target="#myModal"> Click to see leader board !!</button>
+                                    <button class="btn btn-default" type="button">
+                                      Score <span id ="badge1" class="badge">0</span>
+                                </button>
+
+                                <button class="btn btn-default" type="button">
+                                      Exp-level <span id ="badge2" class="badge">0</span>
+                                </button>
+                               </div> 
+                            </div>
+                    
+            {% else %}
+
+                <p><a href="facebook/get_login"> log in </a> to see your participation.</p>
+            {% endif %}
+          </div>
+          </div>  -->
+          <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h3 class="panel-title">Friends</h3>
+                </div>
+          <div class="panel-body">
+                {% if user.is_authenticated %}
+                      
+                    {% for f in friends  %}
+
+                            <div class='col-sm-2'>
+
+                                <a href="/get_collection/{{ f.id }}">
+                                <img src="http://graph.facebook.com/{{f.id}}/picture?type=square"
+                                 alt="{{ f.name }}" title="{{ f.name }}"/> </a>
+                            </div>
+                    {% endfor   %}
+            {% else %}
+
+                <p><a href="facebook/get_login"> log in </a> to see your friend's collections.</p>
+            {% endif %}
+          </div>
+          </div>
+          
+
+
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Collections</h3>
+            </div>
+            <div class="panel-body">
+                {% if user.is_authenticated %}
+                <ol id="selectable" class="glyphicons">
+
+
+                </ol>
+                <button id="add_collection" title="Add Collection"> New </button>
+
+                {% else %}
+                <p><a href="facebook/get_login"> log in </a> to see start or see your collections.</p>
+                {% endif %}
+
+            </div>
+            </div>
+
+
+          <!-- <hr/>
+          <h2>How to:</h2>
+          <p><ul >
+                    <li>
+                        <a class="youtube" href="http://www.youtube.com/watch?v=2PFA7mSfUdA">Rate individuals</a>
+                    </li>
+
+                    <li>
+                        <a class="youtube" href="http://www.youtube.com/watch?v=5FwEpV75aTA">See Ancestors</a>
+                    </li>
+
+                    <li>
+                        <a class="youtube" href="http://www.youtube.com/watch?v=zE_HGPSDA_0">Save to Collections</a>
+                    </li>
+
+                </ul>
+          </p>
+          <hr/>
+          <h2>Help us:</h2>
+          <p><ul >
+                        <li>
+                          You can fork code from  <a href="https://github.com/mariosky/evospacei" target="_blank" >Git Hub. </a>
+                          But you better wait for the new version. Bugs and issues please also in <a href="https://github.com/mariosky/evospacei/issues" target="_blank">Git Hub. </a>.
+                        </li>
+                        <li>
+                            Our To-Do list, please put feature requests
+                            <a href="https://docs.google.com/document/d/1ncV4tehiLQjGMX1-FcCgiEepSsoJ90BSnYli5PN_jdI/edit?usp=sharing " target="_blank">here.</a>
+                        </li>
+
+                   </ul>
+            </p>
+ -->
+
+          </div>
+
+
+    <div class="container">
+
+
+
+        <div class='row'>
+          <div class='col-md-6'>
+
+            <div class="thumbnail">
+
+
+            <!-- <canvas id="slot0" data-processing-sources="https://s3.amazonaws.com/evospace/prototype/figs.pde"></canvas> -->
+            
+            <canvas id="slot0" data-processing-sources="static/js/figs.pde"></canvas>
+            <div class="cover boxcaption">
+            <a class="paint_name">                </a>
+            <!-- <a class="fitness" > </a> -->
+            {% if user.is_authenticated %}
+                <div id='loading'>
+                <img src="//castelmaison.com/media/wysiwyg/loader01.gif"  height="40" width="40">
+
+                
+
+                </div>
+                <form id="evaluation">
+                  
+                  <input id="input-21e" value="0" type="number" class="rating" min=0 max=5 step=1 data-size="xs" data-toggle="tooltip" data-placement="right" title"Evaluate the paiting!">
+                </form>
+                <button class="addto"> Add to collection</button>
+            {% endif %}
+            </div>
+            </div>
+
+            
+
+                
+            
+
+        </div>
+
+
+
+
+
+
+
+        
+ 
+      </br>
+           <div class='col-md-6'>
+            </br></br></br></br></br></br>
+            <div><p> Compatible with latest versions of Chrome and FireFox. IExplorer 10+ only.</p></div>
+
+
+            <div class="fb-comments" data-href="http://shapes.evospace.org" data-width="470" data-num-posts="10"></div>
+
+        </div>
+
+        </div>
+
+    </div>
+
+
+
+
+       
+
+    </div>
+
+
+    </div>
+
+
+</div><!-- container -->
+
+
+  <div id="box2"><!-- container -->
+
+        <form id="add_collec" enctype="multipart/form-data">
+            <fieldset>
+                <label for="col_name">Name</label>
+                <input type="text" name="name" id="col_name" class="text ui-widget-content ui-corner-all" />
+                <label for="col_description">Description</label>
+                <input type="text" name="description" id="col_description" placeholder="Optional" value="" class="text ui-widget-content ui-corner-all" />
+                <label for="col_option">Visibility</label>
+                       <select name="visibility" id="col_option" placeholder="Optional" lass="text ui-widget-content ui-corner-all">
+                            <option value="PU">Public</option>
+                            <option value="PR">Private</option>
+                        </select>
+            </fieldset>
+            </form>
+
+  </div>
+
+<div id="box3"><!-- container -->
+
+    <form id="add_ind_col" enctype="multipart/form-data">
+        <fieldset id="col_ind" >
+        </fieldset>
+
+        <fieldset>
+            <select id="uc" name="collection"  lass="text ui-widget-content ui-corner-all">
+
+            </select>
+        </fieldset>
+    </form>
+
+</div>
+
+
+     <!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Leader Board</h4>
+      </div>
+      <div class="modal-body">
+        <table class="table table-striped">
+         <thead>
+          <tr>
+            <th>#</th>
+            <th>User</th>
+            <th>Score</th>
+            <th>Experience</th>
+          </tr>
+         </thead>
+
+          <tbody id="lider-board">
+                  <!-- <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>34</td>
+                    <td>11</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>100</td>
+                    <td>13</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Larry</td>
+                    <td>150</td>
+                    <td>14</td>
+                  </tr> -->
+                </tbody>
+        </table>
+        
+      </div>
+
+
+      <div class="modal-footer">
+           {% if user.is_authenticated %}
+
+           {% else %}
+
+
+           {% endif %}
+
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <!--<button type="button submit" class="btn btn-primary">Save changes</button>-->
+
+      </div>
+    </div>
+  </div>
+ </div>
+
+
+
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <!--<script src="static/js/jquery.js"></script>-->
+
+  </body>
+</html>
