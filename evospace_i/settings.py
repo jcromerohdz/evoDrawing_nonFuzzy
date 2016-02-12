@@ -16,7 +16,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 FACEBOOK_APP_ID = os.environ['APP_ID']
 FACEBOOK_APP_SECRET = os.environ['APP_SECRET']
-FACEBOOK_REDIRECT_URL = ''
+FACEBOOK_REDIRECT_URL = ' https://evodrawings01.herokuapp.com/facebook/login'
 AUTHENTICATION_BACKENDS = (
     'shapes.backends.FacebookBackend',
 )

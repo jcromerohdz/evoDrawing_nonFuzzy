@@ -67,13 +67,13 @@
         <button class="btn btn-success" id="get_more" > Get More</button>
           
             {% if user.is_authenticated %}
-                <h2>{{ user.first_name }}</h2>
+                <h2>Welcome! {{ user.first_name }}</h2>
                 <!-- <p> <a href="/logout">Log out</a> </p> -->
                 <input id="username" type="hidden" value="{{user.username}}"/>
-                <p>Give a rate of your preferance to the painting on the canvas and get more paintings!.</p>
+                <p>Please rate each drawing on the canvas, but wait until the drawing animation is complete. After each rating you will get another drawing. Collect your favorites!.</p>
             {% else %}
-                <h2>Join us!</h2>
-                <p>new user. Please <a href="facebook/get_login">log in </a> with your facebook account.</p>
+                <h2>Help us!</h2>
+                <p>Please to participate <a href="facebook/get_login">log in </a> with your facebook account.</p>
                
                 <input id="username" type="hidden" value="anonymous"/>
             {% endif %}
@@ -112,19 +112,18 @@
           </div>  -->
           <div class="panel panel-default">
                 <div class="panel-heading">
-                  <h3 class="panel-title">Friends</h3>
+                  <h3 class="panel-title">Click on avatar friends to see their drawings!</h3>
                 </div>
           <div class="panel-body">
                 {% if user.is_authenticated %}
                       
                     {% for f in friends  %}
 
-                            <div class='col-sm-2'>
 
                                 <a href="/get_collection/{{ f.id }}">
                                 <img src="http://graph.facebook.com/{{f.id}}/picture?type=square"
                                  alt="{{ f.name }}" title="{{ f.name }}"/> </a>
-                            </div>
+                           
                     {% endfor   %}
             {% else %}
 
@@ -137,7 +136,8 @@
 
           <div class="panel panel-default">
             <div class="panel-heading">
-              <h3 class="panel-title">Collections</h3>
+              <h3 class="panel-title">
+Below you can create collections of drawings</h3>
             </div>
             <div class="panel-body">
                 {% if user.is_authenticated %}
