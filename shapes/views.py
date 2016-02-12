@@ -215,7 +215,6 @@ def home(request):
         na = fn
         n = Nodo()
         p = Person()
-        #print na
         person_result = p.get_person(na)
         print "if resultado igual a error"
         print person_result
