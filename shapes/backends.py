@@ -37,8 +37,8 @@ class FacebookBackend:
         else:
             user.email = profile['id']
 
-        user.first_name = profile['first_name']
-        user.last_name = profile['last_name']
+        user.first_name = profile['name']
+        user.last_name = profile['name']
         user.save()
 
         #Agregando Activity_stream
@@ -47,9 +47,10 @@ class FacebookBackend:
         #Agregando nodo usuario, creado por Christian "Nuevo"
         usr = profile['id']
         email = profile['name']
-        first_name = profile['first_name']
-        last_name = profile['last_name']
-        full_name = first_name + " " + last_name
+        #first_name = profile['first_name']
+        #last_name = profile['last_name']
+        #full_name = first_name + " " + last_name
+        full_name = profile['name']
 
         print '****************'
         nodo = Nodo()

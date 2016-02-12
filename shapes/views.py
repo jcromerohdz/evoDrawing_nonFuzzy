@@ -115,12 +115,12 @@ def evospace(request):
                 pass
             population.put_sample(params[0])
 
-            #Aqui se va armar la machaca del individuo
+            #Aqui se construye el grafo con el individuo
             if request.user.is_authenticated():
                 usr = request.user.username
                 first_name = request.user.first_name
-                last_name = request.user.last_name
-                name = first_name + " " + last_name
+                #last_name = request.user.last_name
+                name = first_name
                 nodo = Nodo()
                 person = Person()
                 person_result = person.get_person(name)
@@ -205,12 +205,12 @@ def home(request):
             #print "Hola, mundo!!"
 
 
-        #Condultar nodo usuario
+        #Consultar nodo usuario
         u = request.user.username
         e = request.user.email
         fn = request.user.first_name
-        ln = request.user.last_name
-        na = fn + " " + ln
+        #ln = request.user.last_name
+        na = fn
         n = Nodo()
         p = Person()
         print na
