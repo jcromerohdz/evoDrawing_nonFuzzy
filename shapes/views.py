@@ -104,7 +104,7 @@ def evospace(request):
 
         elif method == "putSample":
             #Cada EVOLUTION_INTERVAL evoluciona
-            print "##################"
+            #print "##################"
             if not population.get_returned_counter() % EVOLUTION_INTERVAL:
                 try:
                     print "Evolucionando"
@@ -129,7 +129,7 @@ def evospace(request):
                 activity_stream = Activity_stream()
 
                 #print u
-                print "=========Parametros==========="
+                print "Parametros"
                 print params[0]
                 usrLastDate=str(usr_last_date(params[0]['sample'][0]['fitness']))
                 print usrLastDate
@@ -215,7 +215,7 @@ def home(request):
         na = fn
         n = Nodo()
         p = Person()
-        print na
+        #print na
         person_result = p.get_person(na)
         print "if resultado igual a error"
         print person_result
@@ -228,7 +228,7 @@ def home(request):
         #     print "creo nodo"
         #     print n
 
-        print "+++++++++++++++++"
+        #print "+++++++++++++++++"
         #print na, r[0][0]["name"]
         #n = Person()
         # participation = p.get_participation(u)
@@ -395,7 +395,7 @@ def facebook_login(request):
     user = authenticate(token=access_token)
     
     if user:
-        print user
+        #print user
         u = str(user)
         #r = redis.StrictRedis(host='localhost', port=6379, db=0)
         r = redis
@@ -490,8 +490,8 @@ def add_collection(request, username):
 
         #Relacionar coleccion con el usuario
         firstName = request.user.first_name
-        lastName = request.user.last_name
-        name = firstName +" "+lastName
+        #lastName = request.user.last_name
+        name = firstName
         person = Person()
         person_result = person.get_person(name)
         collection = GraphCollection()
@@ -692,7 +692,7 @@ def user_experience(request):
             #print d[fk[0]]['verb']
 
 def get_user_level(request, username):
-    print "^^^^^^^^^^^^^^"
+    #print "^^^^^^^^^^^^^^"
     if username:
 
         p = Person()
