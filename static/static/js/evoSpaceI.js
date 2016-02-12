@@ -765,7 +765,7 @@ $(document).ready(function () {
                                         "href","/individual/"+sample.sample[slot_index].id.substr(15));
                                     element.nextElementSibling.childNodes[1].setAttribute(
                                             "target","_blank");
-                                    element.nextElementSibling.childNodes[1].textContent = "Details";//"id:" + sample.sample[slot_index].id.substr(15) ;
+                                    element.nextElementSibling.childNodes[1].textContent = "Click here to see who I am!";//"id:" + sample.sample[slot_index].id.substr(15) ;
 
 
                                     var suma = 0;
@@ -846,7 +846,7 @@ $(document).ready(function () {
                                         "href","/individual/"+sample.sample[slot_index].id.substr(15));
                                     element.nextElementSibling.childNodes[1].setAttribute(
                                             "target","_blank");
-                                    element.nextElementSibling.childNodes[1].textContent = "Details";//"id:" + sample.sample[slot_index].id.substr(15) ;
+                                    element.nextElementSibling.childNodes[1].textContent = "Click here to see who I am!";//"id:" + sample.sample[slot_index].id.substr(15) ;
 
 
                                     var suma = 0;
