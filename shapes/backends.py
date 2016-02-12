@@ -53,7 +53,7 @@ class FacebookBackend:
         #full_name = first_name + " " + last_name
         full_name = profile['name']
 
-        print '****************'
+        #print '****************'
         nodo = Nodo()
         person = Person()
         person_result = person.get_person(full_name)
@@ -61,8 +61,8 @@ class FacebookBackend:
        
 
         #print usr, email, full_name
-        print "if person_result es vacio, entonce hay que crearlo"
-        print person_result
+        print "if personResult es vacio, entonce hay que crearlo"
+        #print person_result
 
         if not person_result:
             print "creando nodo"
