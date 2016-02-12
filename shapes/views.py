@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 # Python
 import urllib
 import urlparse
@@ -194,7 +196,7 @@ def home(request):
         
         friends = face.query("me", connection_type="friends", fields='name,installed')
        
-        print friends
+        #print friends
        
         
         #print "Amigos"
@@ -217,8 +219,8 @@ def home(request):
         person_result = p.get_person(na)
         print "if resultado igual a error"
         print person_result
-        print "2323232323232323"
-        print u
+        #print "2323232323232323"
+        #print u
 
         # if not r:
         #     print "creando nodo"
