@@ -1,7 +1,8 @@
 __author__ = 'chris'
-import redis, json
+import  json
 import time, datetime
 import ast
+from store import redis
 
 class Activity_stream(object):
     #def __init__(self):
@@ -11,7 +12,8 @@ class Activity_stream(object):
         published = str(datetime.datetime.now())
 
         # Necesito inicializar una lista desde redis ????
-        r = redis.StrictRedis(host='localhost', port=6379, db=0)
+        #r = redis.StrictRedis(host='localhost', port=6379, db=0)
+        r = redis
         #r.set("counter", 0)
         #activity_list=[]
 
