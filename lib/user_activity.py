@@ -47,7 +47,7 @@ class Activity_stream(object):
         #print len()
 
     def experience(self, user_id):
-        r = redis.StrictRedis(host='localhost', port=6379, db=0)
+        r = redis
         user_list = r.lrange("user:"+user_id, 0, -1)
 
         experience = 0
