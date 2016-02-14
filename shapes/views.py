@@ -722,7 +722,7 @@ def get_user_level(request, username):
     return HttpResponse(j, content_type='application/json')
 
 
-def get_liders(request):
+def get_leaders(request):
     print "T_T"
     
     jd = {"leaders":[]}
@@ -730,7 +730,7 @@ def get_liders(request):
     lider_board = p.get_lider_board()
     #ldier_board = score[0][0]
 
-    print lider_board
+    #print lider_board
    
     if lider_board:
         #   c = 0
