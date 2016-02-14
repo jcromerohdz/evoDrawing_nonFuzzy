@@ -23,7 +23,7 @@ urlpatterns = patterns('',
     #url(r'^individual_status/$', 'shapes.views.individual_status', name='status'),
     url(r'^get_user_level/(\d+)/$', 'shapes.views.get_user_level', name='get_user_level'),
     url(r'^get_user_level/(\w+)/$', 'shapes.views.get_user_level', name='get_user_level'),
-    url(r'^get_liders/', 'shapes.views.get_liders', name='get_liders'),
+    url(r'^get_leaders/', 'shapes.views.get_liders', name='get_liders'),
 
     url(r'^admin/', include(admin.site.urls)),
 )

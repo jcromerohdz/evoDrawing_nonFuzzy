@@ -752,12 +752,14 @@ def get_liders(request):
 
         
         j = json.dumps(jd) 
-        print "101010101001010101010101001"
-        print lider_board
-        print jd
-        print j   
+        #print "101010101001010101010101001"
+        #print lider_board
+        #print jd
+        #print j   
     else:
-        print "No lider board"
+        print "No leader board"
+        m = {"leader_board":"No leader board"}
+        j =json.dumps(m)
         
         
     return HttpResponse(j, content_type='application/json')
