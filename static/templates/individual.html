@@ -22,8 +22,8 @@
 <link href="/static/static/css/bootstrap.min.css" rel="stylesheet">
 <link href="/static/static/css/jumbotron.css" rel="stylesheet">
 
-<link rel="stylesheet" href="https://s3.amazonaws.com/evospace/prototype/stylesheets/base.css">
-<link rel="stylesheet" href="https://s3.amazonaws.com/evospace/prototype/stylesheets/skeleton.css">
+<!-- <link rel="stylesheet" href="https://s3.amazonaws.com/evospace/prototype/stylesheets/base.css">
+ --><link rel="stylesheet" href="https://s3.amazonaws.com/evospace/prototype/stylesheets/skeleton.css">
 <link rel="stylesheet" href="https://s3.amazonaws.com/evospace/prototype/stylesheets/layout.css">
 <link rel="Stylesheet" href="https://s3.amazonaws.com/evospace/prototype/stylesheets/wHumanMsg.css" />
 <link rel="stylesheet" href="https://s3.amazonaws.com/evospace/prototype/stylesheets/prototype.css">
@@ -201,13 +201,13 @@ function AsImage()
         <div class="row">
         <div class='col-md-6'>
 
-            <div class='six columns slideup'>
+            
                 {% if user.is_authenticated %}
                     <p> <img src="http://graph.facebook.com/{{user.email}}/picture?type=square"/> {{ user.first_name }}.  </p>
                 {% else %}
                     <p>Welcome, new user. Please <a href="facebook/get_login"> log in </a>with your facebook account. </p>
                 {% endif %}
-            </div>
+         
             <div class='col-mid-6'>
 
                 <h4 > <a href="/"> EvoDrawings </a></h4>
