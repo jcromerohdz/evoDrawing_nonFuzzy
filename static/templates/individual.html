@@ -222,12 +222,13 @@ function AsImage()
 
     </header>   <!-- header  ================ -->
 
-    <div class="three columns sidebar"><!-- Sidebar  ================ -->
-        <nav>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Details</h3>
+        </div>
+          <div class="panel-body">
 
-            <div class="three columns sidebar">
-                <h4> Details </h4>
-               <ul>
+           <ul>
                    <li> <strong> Likes: </strong>  {{ individual.fitness|length   }} </li>
                    <li> <strong> Views: </strong>  {{ individual.views }} </li>
                    {% if papa %}
@@ -240,7 +241,7 @@ function AsImage()
 
                    <li> <strong>Gen Operator: </strong>{{ individual.crossover|default:'None' }} </li>
                    <li> <strong>  Chromosome: </strong> </li>
-		</ul>
+        </ul>
                    <li>  <strong>{{  individual.chromosome|slice:"0:1"  }}</strong>No. Figuras</li>
                    <li>  <strong>{{  individual.chromosome|slice:"1:2"  }}</strong>Tama&ntildeo Figuras</li>
                    <li>  <strong>{{  individual.chromosome|slice:"2:3"  }}</strong>Triangulo</li>
@@ -252,19 +253,29 @@ function AsImage()
                    <li>  <strong>{{  individual.chromosome|slice:"8:9"  }}</strong>Restringido al canvas</li>
                    <li>  <strong>{{  individual.chromosome|slice:"9:10" }}</strong>Rotar Figura</li>
                    <li>  <strong>{{  individual.chromosome|slice:"10:11"}}</strong>Posicion Inicial</li>
-		     <li>  <strong>{{  individual.chromosome|slice:"11:12"}}</strong>Contorno o Relleno</li>
-		     <li>  <strong>{{  individual.chromosome|slice:"12:13"}}</strong>Linea</li>
-		     <li>  <strong>{{  individual.chromosome|slice:"13:14"}}</strong>Tipo de Linea</li>
-		     <li>  <strong>{{  individual.chromosome|slice:"14:15"}}</strong>Fondo</li>
+             <li>  <strong>{{  individual.chromosome|slice:"11:12"}}</strong>Contorno o Relleno</li>
+             <li>  <strong>{{  individual.chromosome|slice:"12:13"}}</strong>Linea</li>
+             <li>  <strong>{{  individual.chromosome|slice:"13:14"}}</strong>Tipo de Linea</li>
+             <li>  <strong>{{  individual.chromosome|slice:"14:15"}}</strong>Fondo</li>
 
+          
+          </div>
+          </div>
+
+    <!-- <div class="three columns sidebar"> --><!-- Sidebar  ================ -->
+        <!-- <nav>
+
+            <div class="three columns sidebar">
+                <h4> Details </h4>
+              
 
 
 
            </div>
 
-        </nav>
-        &nbsp;
-    </div><!-- Sidebar  ================ -->
+        </nav> -->
+        <!-- &nbsp;
+    </div> --><!-- Sidebar  ================ -->
 
 
 
