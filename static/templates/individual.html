@@ -18,6 +18,10 @@
 
 <!-- CSS
 ================================================== -->
+
+<link href="/static/static/css/bootstrap.min.css" rel="stylesheet">
+<link href="/static/static/css/jumbotron.css" rel="stylesheet">
+
 <link rel="stylesheet" href="https://s3.amazonaws.com/evospace/prototype/stylesheets/base.css">
 <link rel="stylesheet" href="https://s3.amazonaws.com/evospace/prototype/stylesheets/skeleton.css">
 <link rel="stylesheet" href="https://s3.amazonaws.com/evospace/prototype/stylesheets/layout.css">
@@ -192,14 +196,14 @@ function AsImage()
 
             <div class='six columns slideup'>
                 {% if user.is_authenticated %}
-                    <p> <img src="http://graph.facebook.com/{{user.email}}/picture?type=small"/> {{ user.first_name }}.  </p>
+                    <p> <img src="http://graph.facebook.com/{{user.email}}/picture?type=square"/> {{ user.first_name }}.  </p>
                 {% else %}
                     <p>Welcome, new user. Please <a href="facebook/get_login"> log in </a>with your facebook account. </p>
                 {% endif %}
             </div>
             <div class='six columns  slideup'>
 
-                <h4 class='strapline'> <a href="/"> <strong> Shapes</strong>   </a></h4>
+                <h4 > <a href="/"> <strong> EvoDrawings</strong>   </a></h4>
 
             </div>
 
