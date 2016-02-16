@@ -465,83 +465,83 @@ $(document).ready(function () {
 
         //Aqui UserLeve Score & level
 
-         //UserScore and rankin
-         $(function(){
-            //var user=$("#username").val();
+         // //UserScore and rankin
+         // $(function(){
+         //    //var user=$("#username").val();
 
-             //alert("lider board!");
+         //     //alert("lider board!");
 
-             //Lider boad
+         //     //Lider boad
 
-             $.ajax(
-                 {
-                     url: "/get_liders/",
-                     type: "GET",
-                     contentType: "application/json",
-                     dataType: "json",
-                     success: function(data, textStatus, jqXHR) {
+         //     $.ajax(
+         //         {
+         //             url: "/get_liders/",
+         //             type: "GET",
+         //             contentType: "application/json",
+         //             dataType: "json",
+         //             success: function(data, textStatus, jqXHR) {
 
 
-                        //alert(data.length);
-                        var c = 0;
-                        var txt = ""; 
-                        //alert(Object.keys(data.leaders).length);
-                        for(var obj in data.leaders){
-                             //alert(data[obj].score);
-                             //alert(Object.keys(data).length);
+         //                //alert(data.length);
+         //                var c = 0;
+         //                var txt = ""; 
+         //                //alert(Object.keys(data.leaders).length);
+         //                for(var obj in data.leaders){
+         //                     //alert(data[obj].score);
+         //                     //alert(Object.keys(data).length);
                              
-                             if (c < Object.keys(data.leaders).length){
-                                c = c + 1;
-                            //alert(data.leaders[obj].user)
+         //                     if (c < Object.keys(data.leaders).length){
+         //                        c = c + 1;
+         //                    //alert(data.leaders[obj].user)
 
-                                //alert(c);
-                             //alert(data[obj]);   
+         //                        //alert(c);
+         //                     //alert(data[obj]);   
                             
-                             }
+         //                     }
 
-                                    //alert(prop + ':' + jsonData[obj][prop]);
+         //                            //alert(prop + ':' + jsonData[obj][prop]);
                                                                         
-                                    txt += "<tr>";
-                                    txt += "<th>"+c+"</th>"; 
-                                    txt += "<td>"+data.leaders[obj].user+ "</td>";
-                                    txt += "<td>"+data.leaders[obj].score+ "</td>";
-                                    txt += "<td>"+data.leaders[obj].ranking+ "</td>";
-                                    txt += "</tr>";  
-                                    document.getElementById('lider-board-t').innerHTML = txt; 
-                                    document.getElementById('lider-board').innerHTML = txt;                                                      
+         //                            txt += "<tr>";
+         //                            txt += "<th>"+c+"</th>"; 
+         //                            txt += "<td>"+data.leaders[obj].user+ "</td>";
+         //                            txt += "<td>"+data.leaders[obj].score+ "</td>";
+         //                            txt += "<td>"+data.leaders[obj].ranking+ "</td>";
+         //                            txt += "</tr>";  
+         //                            document.getElementById('lider-board-t').innerHTML = txt; 
+         //                            document.getElementById('lider-board').innerHTML = txt;                                                      
                        
                                    
                          
-                        }
+         //                }
                         
                          
 
-                        // for (var i in data){
-                        //     //alert("for");
-                        //     var c = parseInt([i]) + 1;
-                        //     var sn = c.toString();
-                        //     var lid = "lider"+sn;
-                        //     alert(lid);
-                        //     alert(Object.keys(data).length);
-                        //     alert(Object.keys(data));
-                        //     var k = Object.keys(data);
+         //                // for (var i in data){
+         //                //     //alert("for");
+         //                //     var c = parseInt([i]) + 1;
+         //                //     var sn = c.toString();
+         //                //     var lid = "lider"+sn;
+         //                //     alert(lid);
+         //                //     alert(Object.keys(data).length);
+         //                //     alert(Object.keys(data));
+         //                //     var k = Object.keys(data);
 
-                        //     alert(i.user);
+         //                //     alert(i.user);
                             
                             
-                        // }
+         //                // }
 
 
                        
 
 
-                     },
-                     error: function(jqXHR, textStatus, errorThrown)  {
-                         alert ("Error:" + textStatus+" "+errorThrown+" "+jqXHR.responseText);}
-                 });
+         //             },
+         //             error: function(jqXHR, textStatus, errorThrown)  {
+         //                 alert ("Error:" + textStatus+" "+errorThrown+" "+jqXHR.responseText);}
+         //         });
 
 
-        });
+        //});
 
             $.ajax(
                 {
