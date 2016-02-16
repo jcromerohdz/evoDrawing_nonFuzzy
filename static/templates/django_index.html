@@ -112,9 +112,10 @@
           </div>  -->
           <div class="panel panel-default">
                 <div class="panel-heading">
-                  <h3 class="panel-title">Click on avatar friends to see their drawings!</h3>
+                  <h3 class="panel-title">Friends</h3>
                 </div>
           <div class="panel-body">
+          <h4>Click on friends to see their drawings!</h4>
                 {% if user.is_authenticated %}
                       
                     {% for f in friends  %}
@@ -225,7 +226,7 @@ Below you can create collections of drawings</h3>
 
 
         <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-6">
           
             {% if user.is_authenticated %}
                 <h2>Welcome! {{ user.first_name }}</h2>
