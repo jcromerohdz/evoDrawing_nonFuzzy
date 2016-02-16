@@ -62,13 +62,13 @@
 
     <div class="container">
       <!-- Example row of columns -->
-      <div class="row">
+      <!-- <div class="row">
         <div class="col-md-4">
-        <button class="btn btn-success" id="get_more" > Get More</button>
+        <button class="btn btn-success" id="get_more" > Get More</button> -->
           
-            {% if user.is_authenticated %}
+            <!-- {% if user.is_authenticated %}
                 <h2>Welcome! {{ user.first_name }}</h2>
-                <!-- <p> <a href="/logout">Log out</a> </p> -->
+                
                 <input id="username" type="hidden" value="{{user.username}}"/>
                 <p>Please rate each drawing on the canvas, but wait until the drawing animation is complete. After each rating you will get another drawing. Collect your favorites!.</p>
             {% else %}
@@ -77,7 +77,7 @@
                
                 <input id="username" type="hidden" value="anonymous"/>
             {% endif %}
-            <hr/>
+            <hr/> -->
 
           
 
@@ -226,15 +226,18 @@ Below you can create collections of drawings</h3>
 
 
         <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-10">
           
             {% if user.is_authenticated %}
                 <h2>Welcome! {{ user.first_name }}</h2>
                 <!-- <p> <a href="/logout">Log out</a> </p> -->
                 <input id="username" type="hidden" value="{{user.username}}"/>
-                <p>1. Please rate each drawing on the canvas, but wait until the drawing animation is complete. 
-                2. After each rating you will get another drawing. 
-                3. Collect your favorites! </p>
+                <ol>
+                  <li>Please rate each drawing on the canvas, but wait until the drawing animation is complete.</li> 
+                  <li>After each rating you will get another drawing.</li> 
+                 <li>Collect your favorites!</li> 
+
+                 </ol>
             {% else %}
                 <h2>Help us!</h2>
                 <p>Please to participate <a href="facebook/get_login">log in </a> with your facebook account.</p>
