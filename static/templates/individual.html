@@ -190,9 +190,16 @@ function AsImage()
 <!-- Delete everything in this .container and get started on your own site! -->
 
 <div class="container">
+      <!-- Example row of columns -->
+     
+        <div class="col-md-4">
+
+
+<div class="container">
 
     <header>
-        <div class='sixteen columns'>
+        <div class="row">
+        <div class='col-md-6'>
 
             <div class='six columns slideup'>
                 {% if user.is_authenticated %}
@@ -201,13 +208,14 @@ function AsImage()
                     <p>Welcome, new user. Please <a href="facebook/get_login"> log in </a>with your facebook account. </p>
                 {% endif %}
             </div>
-            <div class='six columns  slideup'>
+            <div class='col-mid-6'>
 
-                <h4 > <a href="/"> <strong> EvoDrawings</strong>   </a></h4>
+                <h4 > <a href="/"> EvoDrawings </a></h4>
 
             </div>
 
 
+        </div>
         </div>
 
         <hr class="large" />
