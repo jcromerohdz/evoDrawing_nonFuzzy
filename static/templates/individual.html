@@ -260,36 +260,36 @@ function AsImage()
              <li>  <strong>{{  individual.chromosome|slice:"13:14"}}</strong>Tipo de Linea</li>
              <li>  <strong>{{  individual.chromosome|slice:"14:15"}}</strong>Fondo</li>
          </div >
-         <div class="col-mid-6">
+         <div class="col-md-6">
                     
 
 
 
-                    <div class='thirteen columns grid-item slideup'>
+                    <div class='col-md-6'>
                         <h4>{{ individual.id }}</h4>
                         <h4> Chromosome:    {{individual.chromosome}}</h4><button onclick="AsImage()">To Image</button>
                          <div id="asImage">
 
-                            </div>
+                        </div>
 
                         <canvas id="slot" data-processing-sources="https://s3.amazonaws.com/evospace/prototype/figs.pde"></canvas>
-                        <div class="cover boxcaption">
+                        <!-- <div class="cover boxcaption">
                             <span class="paint_name">                </span>
                             <a class="fitness" title="show ratings"> </a>
-                        </div>
+                        </div> -->
 
                     </div>
 
 
                     {% if papa %}
-                        <div class='six columns grid-item slideup'>
+                        <div >
                             <a href="/individual/{{individual.papa|slice:"15:" }}">    <h4>Parent:{{individual.papa }}</h4></a>
 
                 <canvas id="papa" data-processing-sources="https://s3.amazonaws.com/evospace/prototype/figs.pde"></canvas>
                      </div>
                     {% endif %}
                     {% if mama %}
-                    <div class='six columns grid-item slideup'>
+                    <div >
                      <a href="/individual/{{individual.mama|slice:"15:" }}">   <h4>Parent: {{individual.mama }}</h4></a>
 
                         <canvas id="mama" data-processing-sources="https://s3.amazonaws.com/evospace/prototype/figs.pde"></canvas>
