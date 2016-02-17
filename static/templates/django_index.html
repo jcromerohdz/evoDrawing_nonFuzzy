@@ -245,7 +245,7 @@ Collections</h3>
         <div class="col-md-10">
           
             {% if user.is_authenticated %}
-                <h2>Welcome! {{ user.first_name }}</h2>
+                <h2>{{ user.first_name }}</h2>
                 <!-- <p> <a href="/logout">Log out</a> </p> -->
                 <input id="username" type="hidden" value="{{user.username}}"/>
                 <ul>
