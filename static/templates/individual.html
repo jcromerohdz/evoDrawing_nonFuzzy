@@ -229,7 +229,7 @@ function AsImage()
         </div>
           <div class="panel-body">
           <div class="row">
-          <div class"col-mid-4">  
+          <div class"col-md-4">  
            <ul>
                    <li> <strong> Likes: </strong>  {{ individual.fitness|length   }} </li>
                    <li> <strong> Views: </strong>  {{ individual.views }} </li>
@@ -261,8 +261,11 @@ function AsImage()
              <li>  <strong>{{  individual.chromosome|slice:"14:15"}}</strong>Fondo</li>
          </div >
          <div class="col-mid-6">
-            
-                    <div >
+                    
+
+
+
+                    <div class='thirteen columns grid-item slideup'>
                         <h4>{{ individual.id }}</h4>
                         <h4> Chromosome:    {{individual.chromosome}}</h4><button onclick="AsImage()">To Image</button>
                          <div id="asImage">
@@ -279,14 +282,14 @@ function AsImage()
 
 
                     {% if papa %}
-                        <div >
+                        <div class='six columns grid-item slideup'>
                             <a href="/individual/{{individual.papa|slice:"15:" }}">    <h4>Parent:{{individual.papa }}</h4></a>
 
                 <canvas id="papa" data-processing-sources="https://s3.amazonaws.com/evospace/prototype/figs.pde"></canvas>
                      </div>
                     {% endif %}
                     {% if mama %}
-                    <div >
+                    <div class='six columns grid-item slideup'>
                      <a href="/individual/{{individual.mama|slice:"15:" }}">   <h4>Parent: {{individual.mama }}</h4></a>
 
                         <canvas id="mama" data-processing-sources="https://s3.amazonaws.com/evospace/prototype/figs.pde"></canvas>
@@ -295,8 +298,8 @@ function AsImage()
 
                     {% endif %}
 
-                       
-            </div> 
+            </div>            
+         </div> 
          </div>
   
           
