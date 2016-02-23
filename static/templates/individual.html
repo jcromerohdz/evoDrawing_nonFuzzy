@@ -285,7 +285,7 @@ function AsImage()
                      </div class="col-md-6">
                     {% endif %}
                     {% if mama %}
-                    <div >
+                    <div class="col-md-6">
                      <a href="/individual/{{individual.mama|slice:"15:" }}">   <h4>Parent: {{individual.mama }}</h4></a>
 
                         <canvas id="mama" data-processing-sources="https://s3.amazonaws.com/evospace/prototype/figs.pde"></canvas>
