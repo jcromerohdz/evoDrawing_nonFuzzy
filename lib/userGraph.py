@@ -82,7 +82,7 @@ class Person(object):
         self.f = name_friend
         try:
             "Este es:"
-            query = "MATCH n-[r]-b WHERE n.id='" + self.p+ "' RETURN count(b)"
+            query = "MATCH a-[:KNOWS]->b where a.name='" + self.p + "' AND b.name='"+self.f+"' return b"
             print query
             result, metadata = cypher.execute(graph_db, query)
             r = result
